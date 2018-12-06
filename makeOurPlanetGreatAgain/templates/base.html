@@ -1,0 +1,135 @@
+{% load staticfiles %}
+{% load i18n static %}<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{% block title %} Make Our Planet Great Again {% endblock %}</title>
+	<!--
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	
+	{# Load the tag library #}
+	{% load bootstrap3 %}
+
+	{# Load CSS and JavaScript #}
+	{% bootstrap_css %}
+	{% bootstrap_javascript %}
+
+	{# Display django.contrib.messages as Bootstrap alerts #}
+	{% bootstrap_messages %}
+	<meta http-equiv="Contenu-Type" content="text/html" charset="utf-8"/>
+		{% load static  %}
+		<link rel="stylesheet" type="text/css" href="{% static 'css/general_style.css' %}"/>
+	{% block extrastyle %}{% endblock %}
+	{% block extrahead %}{% endblock %}
+</head>
+{% load i18n %}
+	<body>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="page-header">
+					{% block header %}
+				    <h1><a href="/">Make Our Planet Great Again </a></h1>
+				    {% endblock  %}
+				</div>
+
+				<nav class="navbar navbar-inverse">
+					<div class="container-fluid">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>                        
+							</button>
+							<a class="navbar-brand" href="#"><span class="glyphicon glyphicon-leaf"></span><span class="glyphicon glyphicon-fire"></span><span class="glyphicon glyphicon-leaf"></span></a>
+						</div>
+						<div class="collapse navbar-collapse " id="myNavbar">
+							<ul class="nav navbar-nav navbar-center">
+								<li><a href="{% url 'home' %}"><span class="glyphicon glyphicon-home"></span> Accueil</a></li>
+								<li><a href="#">Tous les projets</a></li>
+								<li><a href="#">Evaluations</a></li>
+								<li><a href="#">Financements</a></li>
+								<li><a href="#">A propos</a></li>
+								<li><a href="#">Crédits & Mentions légales</a></li>
+							</ul>
+							<ul class="nav navbar-nav navbar-right">
+								{% if request.session.username %}
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> {{request.session.username}}<span class="caret"></span>
+									</a>
+									<ul class="dropdown-menu">
+										<li><a href="">Mon compte</a></li>
+										<li><a href="#">Préférences</a></li>
+										<li role="separator" class="divider"></li>
+										<li><a href="#">Deconnexion</a></li>
+									</ul>
+								</li>
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-shopping-cart"></span> Panier ({{ request.session.produit_list|length }})<span class="caret"></span>
+									</a>
+									<ul class="dropdown-menu">
+										<li><a href="#">Contenu du panier</a></li>
+										<li><a href="#">Suivre ma commande</a></li>
+										<li role="separator" class="divider"></li>
+										<li><a href="#">Historiques</a></li>
+									</ul>
+								</li>
+								{% else %}
+								<li><a href="{% url 'auteur_authentication' %}"><span class="glyphicon glyphicon-user"></span> Se connecter </a></li>
+								<li><a href="#"><span class="glyphicon glyphicon-registration-mark"></span> S'inscrire </a></li>
+								{% endif %}
+							</ul>
+						</div>
+					</div>
+				</nav>
+
+				<div class="col-sm-2 sidenav" id="nav_zone">
+					<br/>
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="Rechercher..">
+						<span class="input-group-btn">
+							<button class="btn btn-default" type="button">
+								<span class="glyphicon glyphicon-search"></span>
+							</button>
+						</span>
+					</div><hr/>
+					<ul class="nav nav-pills nav-stacked">
+						<li ><a href="{% url 'home' %}">Accueil</a></li>
+						<li> <br> </li>
+						<li><a href="#">Tous les projets</a></li>
+						<li> <br> </li>
+						<li><a href="#">Evaluations</a></li>
+						<li> <br> </li>
+						<li><a href="#">Financements</a></li>
+						<li> <br> </li>
+						<li><a href="#">A propos</a></li>
+						<li> <br> </li>
+						<li><a href="#">Crédits & Mentions légales</a></li>
+						<li> <br><br><br><br><br><br><br><br><br><br><br><br> </li>
+					</ul><br>
+				</div>
+
+				<div class="container content">
+					<div class="col-lg-8 col-md-8 col-lg-offset-3 col-md-offset-3">
+						<div class="alert content_title">
+							{% block content_title %}
+								<strong> Content title </strong> 
+							{% endblock  %}
+						</div>
+					</div>
+
+					{% block content %}
+
+					{% endblock  %}
+				</div>
+			</div>
+		</div>
+		<footer class="container-fluid">
+		  <p>Copy right -- m2_info-acdi.univ-angers.fr</p>
+		</footer>
+
+	</body>
+</html>
