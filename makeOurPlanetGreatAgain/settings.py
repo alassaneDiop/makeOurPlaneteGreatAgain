@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'bootstrap3',
     'makeOurPlanetGreatAgain',
     'karma',
+    'projets',
 ]
 
 MIDDLEWARE = [

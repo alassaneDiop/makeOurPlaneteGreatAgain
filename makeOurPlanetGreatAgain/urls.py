@@ -23,5 +23,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', home, name="home"),
     url(r'authentication/$', auteur_authentication, name="auteur_authentication"),
-    url(r'^karma/$', include('karma.urls')),
+    url(r'^karma/', include('karma.urls')),
+    url(r'^projets/', include('projets.urls')),
 ]
