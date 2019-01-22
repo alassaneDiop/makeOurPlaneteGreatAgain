@@ -1,0 +1,85 @@
+{% extends "base.html"%}
+
+{% block title %}
+	Récent
+{% endblock  %}
+
+{% block content_title %}
+	<div class="alert alert-info">
+		Dernier projet financé
+	</div>
+{% endblock  %}
+
+{% block content %}
+
+{% load staticfiles %}
+<div class="col-md-8">
+
+	<div >    
+		{% if last_project %}
+		<div class="row">
+			<div class="col-md-12">
+				<div class="panel panel-success">
+					<div class="panel-heading">
+						<h4>{{last_project.titre_projet}} </h4>
+					</div>
+					<div class="panel-body">
+						<div class="text-right">
+							<i><strong>Date d'ajout:</strong> {{last_project.date_ajout_projet}} </i>
+						</div>
+						<br />
+						<p> {{last_project.description_projet}} </p>
+					</div>
+					<div class="panel-footer">
+						<i> <strong>Auteur:</strong> {{last_project.auteur_projet.username}} </i>
+					</div>
+				</div>
+			</div>
+		</div>		
+	</div>
+	<div class="row">
+		<div class="col-md-10">
+			<h3><strong>Les avis sur le projet</strong></h3>
+			<br>
+			{% if last_project.evaluation_set.all %}
+			<div >
+				{% for eval in last_project.evaluation_set.all %}
+				<div class="panel panel-info">
+					<div class="panel-heading"> <strong>{{eval.evaluateur.username}}</strong> [ <i>Date: {{eval.date_evaluation}} </i>]</div>
+					<div class="panel-body">
+						<p> {{eval.commentaire}} </p>						
+					</div>
+					<div class="panel-footer text-right">
+						<i> <strong>Note attribuée:</strong> {{eval.note_evaluation}} </i>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+			{% else %}
+			<div class="alert alert-info">
+				Aucun avis sur ce projet
+			</div>
+			{% endif %}
+		</div>
+	</div>
+	{% else %}
+	<div class="alert alert-danger">
+		<p>Aucun produit disponible !</p>
+	</div>
+	{% endif %}
+</div>
+
+<div class="col-md-4">
+	<div class="panel panel-primary">
+		<div class="panel-heading text-center">
+			<h4>A propos de l'auteur </h4>
+		</div>
+		<div class="panel-body">
+
+			<p>Autres projets du même auteur</p>
+			
+		</div>
+		
+	</div>
+</div>
+{% endblock  %}

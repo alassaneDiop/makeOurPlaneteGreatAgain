@@ -1,0 +1,130 @@
+{% extends "base.html"%}
+
+{% block title %}
+Détails
+{% endblock  %}
+
+{% block content_title %}
+Détails sur le projet
+{% endblock  %}
+
+{% block content %}
+
+<div class="col-md-8">
+
+	<div >    
+		{% if project %}
+		<div class="row">
+			<div class="col-md-12">
+				<div class="panel panel-success">
+					<div class="panel-heading">
+						<h4>{{project.titre_projet}} </h4>
+					</div>
+					<div class="panel-body">
+						<div class="text-right">
+							<i><strong>Date d'ajout:</strong> {{project.date_ajout_projet}} </i>
+						</div>
+						<br />
+						<p> {{project.description_projet}} </p>
+					</div>
+					<div class="panel-footer">
+						<i> <strong>Auteur:</strong> {{project.auteur_projet.username}} </i>
+					</div>
+				</div>
+				<div class="col-md-2">
+					<a href="{% url 'add_evaluation' project.id %}" class="btn btn-lg btn-info">Evaluer le projet</a>
+				</div>
+				<div class="col-md-2 col-md-offset-7">
+					<a href="" class="btn btn-lg btn-success">Faire une donnation</a>
+				</div>
+			</div>
+		</div>		
+	</div>
+	<div class="row">
+		<div class="col-md-10">
+			<h3><strong>Les avis sur le projet</strong></h3>
+			<br>
+			{% if project.evaluation_set.all %}
+			<div >
+				{% for eval in project.evaluation_set.all %}
+				<div class="panel panel-info">
+					<div class="panel-heading"> <strong>{{eval.evaluateur.username}}</strong> [ <i>Date: {{eval.date_evaluation}} </i>]</div>
+					<div class="panel-body">
+						<p> {{eval.commentaire}} </p>						
+					</div>
+					<div class="panel-footer text-right">
+						<i> <strong>Note attribuée:</strong> {{eval.note_evaluation}} </i>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+			{% else %}
+			<div class="alert alert-info">
+				Aucun avis sur ce projet
+			</div>
+			{% endif %}
+		</div>
+	</div>
+	{% else %}
+	<div class="alert alert-danger">
+		<p>Aucun produit disponible !</p>
+	</div>
+	{% endif %}
+</div>
+
+<div class="col-md-4">
+	<div class="panel panel-primary">
+		<div class="panel-heading text-center">
+			<h4>Financements du projet </h4>
+		</div>
+		<div class="panel-body">
+
+			{% if sum_finance %}
+
+			<div id="container"></div>
+			<script src="https://code.highcharts.com/highcharts.src.js"></script>
+			<script>
+				var collected_sum = {{sum_finance | safe}}
+				var require_sum = {{sum_requis | safe}}
+				var rest_sum = require_sum - collected_sum
+				Highcharts.chart('container', {
+					chart: {
+						type: 'pie'
+					},
+					title: {
+						text: 'Progression de la collecte'
+					},
+					series: [{
+						name: 'Financement',
+						data: [
+						{
+							name: 'Montant collecté',
+							y: collected_sum,
+							color: 'green'
+						},
+						{
+							name: 'Montant restant',
+							y: rest_sum,
+							color: 'red'
+						}
+						],
+					}
+					]
+				});
+			</script>
+
+			{% else %}
+			<div class="custom-info">
+				Aucun financement reçu pour le moment !
+			</div>
+			{% endif %}
+		</div>
+		<div class="panel-footer ">
+			{% if project %}
+			<i> <strong>Financements réquis:</strong> {{sum_requis}} € </i>
+			{% endif %}
+		</div>
+		
+	</div>
+</div>
+{% endblock  %}

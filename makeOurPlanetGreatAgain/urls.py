@@ -16,13 +16,20 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 
-from makeOurPlanetGreatAgain.views import home
-from makeOurPlanetGreatAgain.views import auteur_authentication
+from . import views
+from django.contrib.auth import views as auth_views
+from makeOurPlanetGreatAgain.views import about, privacyPolicy
+
+from .feeds import ProjectsFeed
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', home, name="home"),
-    url(r'authentication/$', auteur_authentication, name="auteur_authentication"),
-    url(r'^karma/', include('karma.urls')),
+
+    url(r'^$', ProjectsFeed(), name="home"),
+    url(r'^about-site', about, name="about"),
+
     url(r'^projets/', include('projets.urls')),
+    url(r'^authentication/', include('profils.urls')),
+    url(r'^accounts/', include('registration.backends.simple.urls')),
+    url(r'^politique-confidentialite$', privacyPolicy, name="privacy_policy"),
 ]
