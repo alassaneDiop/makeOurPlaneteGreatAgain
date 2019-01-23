@@ -1,0 +1,184 @@
+{% extends "base.html"%}
+
+{% block title %}
+Détails
+{% endblock  %}
+
+{% block content_title %}
+Détails sur le projet
+{% endblock  %}
+
+{% block content %}
+
+<div class="col-md-8">
+
+	<div >    
+		{% if project %}
+		<div class="row">
+			<div class="col-md-12">
+				<div class="panel panel-success">
+					<div class="panel-heading">
+						<h4>{{project.titre_projet}} </h4>
+					</div>
+					<div class="panel-body">
+						<div class="text-right">
+							<i><strong>Date d'ajout:</strong> {{project.date_ajout_projet}} </i>
+						</div>
+						<br />
+						<p> {{project.description_projet}} </p>
+					</div>
+					<div class="panel-footer">
+						<i> <strong>Auteur:</strong> {{project.auteur_projet.username}} </i>
+					</div>
+				</div>
+				<div class="col-md-2">
+					<a href="{% url 'add_evaluation' project.id %}" class="btn btn-lg btn-info">Evaluer le projet</a>
+				</div>
+				<div class="col-md-2 col-md-offset-7">
+					<a href="" class="btn btn-lg btn-success" data-toggle="modal" data-target="#exampleModal">Faire une donnation</a>
+				</div>
+				<!-- Modal -->
+				<form id="donnation" role="form" action="{% url 'project_info' project.id%}" method="post">
+					{% csrf_token %}
+					{% if error_message %}<p><strong>{{ error_message }}</p></strong>{% endif %}
+					<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					  <div class="modal-dialog" role="document">
+					    <div class="modal-content">
+					      <div class="modal-header">
+					        <h2 class="modal-title" id="exampleModalLabel">Faire une donnation</h2>
+					        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					          <span aria-hidden="true">&times;</span>
+					        </button>
+					      </div>
+					      <div class="modal-body">
+					        <p> Ma donnation * </p>
+					        <p><input type="number" min="1" name="donnation" class="form-control" placeholder="Montant"></p>
+					      </div>
+					      <div class="modal-footer">
+					        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+					        <button type="submit" class="btn btn-primary">Valider votre don</button>
+					      </div>
+					    </div>
+					  </div>
+					</div>
+				</form>
+			</div>
+		</div>		
+	</div>
+	<div class="row">
+		<div class="col-md-10">
+			<h3><strong>Les avis sur le projet</strong></h3>
+			<br>
+			{% if project.evaluation_set.all %}
+			<div >
+				{% for eval in project.evaluation_set.all %}
+				<div class="panel panel-info">
+					<div class="panel-heading"> 
+						{% if eval.note_evaluation != 0 %}
+							<strong>Evaluateur : {{eval.evaluateur.username}}</strong> [ <i>Date: {{eval.date_evaluation}} </i>]
+							<i class="text-right"><strong>Note attribuée:</strong> {{eval.note_evaluation}} </i>
+						{% else %}
+							<strong>{{eval.evaluateur.username}}</strong> [ <i>Date: {{eval.date_evaluation}} </i>]
+						{% endif %}
+					</div>
+					<div class="panel-body">
+						<p> {{eval.commentaire}} </p>						
+					</div>
+					<div class="panel-footer text-right">
+						<div class="text-left">
+							<!--{% if likes.like_authentificate_user %}
+								<p> Vous et {{ eval.number_like }} personnes aiment ça </p>
+							{% else %}
+								<p> {{ eval.number_like }} personnes aiment ça </p>
+							{% endif %}-->
+							<p>{{eval.like_set.count}} personnes aiment ça !</p>
+						</div>
+						<form role="form" action="{% url 'project_info' project.id%}" method="post">
+							{% csrf_token %}
+							{% if error_message %}<p><strong>{{ error_message }}</p></strong>{% endif %}
+							<input type="hidden" value="{{ eval.id }}" name="id_eval" />
+							{% if eval.evaluateur != user %}
+								<input type="submit" class="btn btn-info" value="J'aime" />
+							{% endif %}
+						</form>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+			{% else %}
+			<div class="alert alert-info">
+				Aucun avis sur ce projet
+			</div>
+			{% endif %}
+		</div>
+	</div>
+	{% else %}
+	<div class="alert alert-danger">
+		<p>Aucun produit disponible !</p>
+	</div>
+	{% endif %}
+</div>
+
+<div class="col-md-4">
+	<br/>
+	{% if donnation %}
+			<div class="alert alert-success">
+			  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			  <strong>Félicitation!</strong> vous avez contribué a hauteur de {{ donnation }} € avec succès !
+			</div>
+	{% endif %}
+	<div class="panel panel-primary">
+		<div class="panel-heading text-center">
+			<h4>Financements du projet </h4>
+		</div>
+		<div class="panel-body">
+
+			{% if sum_finance %}
+
+			<div id="container"></div>
+			<script src="https://code.highcharts.com/highcharts.src.js"></script>
+			<script>
+				var collected_sum = {{sum_finance | safe}}
+				var require_sum = {{sum_requis | safe}}
+				var rest_sum = require_sum - collected_sum
+				Highcharts.chart('container', {
+					chart: {
+						type: 'pie'
+					},
+					title: {
+						text: 'Progression de la collecte'
+					},
+					series: [{
+						name: 'Financement',
+						data: [
+						{
+							name: 'Montant collecté',
+							y: collected_sum,
+							color: 'green'
+						},
+						{
+							name: 'Montant restant',
+							y: rest_sum,
+							color: 'red'
+						}
+						],
+					}
+					]
+				});
+			</script>
+
+			{% else %}
+			<div class="custom-info">
+				Aucun financement reçu pour le moment !
+			</div>
+			{% endif %}
+		</div>
+		<div class="panel-footer ">
+			{% if project %}
+			<i> <strong>Financements réquis:</strong> {{sum_requis}} € </i>
+			{% endif %}
+		</div>
+		
+	</div>
+</div>
+{% endblock  %}

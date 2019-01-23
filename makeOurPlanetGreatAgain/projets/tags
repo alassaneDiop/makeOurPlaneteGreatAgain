@@ -1,0 +1,38 @@
+!_TAG_FILE_SORTED	2	/0=unsorted, 1=sorted, 2=foldcase/
+add_evaluation	/home/alassane/django/makeOurPlanetGreatAgain/projets/views.py	/^def add_evaluation(request, id_projet):$/;"	f	language:Python
+add_projet	/home/alassane/django/makeOurPlanetGreatAgain/projets/views.py	/^def add_projet(request):$/;"	f	language:Python
+AllProjectView	/home/alassane/django/makeOurPlanetGreatAgain/projets/views.py	/^class AllProjectView(generic.ListView):$/;"	c	language:Python
+auteur_projet	/home/alassane/django/makeOurPlanetGreatAgain/projets/models.py	/^	auteur_projet = models.ForeignKey(User, related_name='auteur', default=1, on_delete=models.CASCADE)$/;"	v	language:Python	class:Projet
+cheick_level_for_eval	/home/alassane/django/makeOurPlanetGreatAgain/projets/views.py	/^def cheick_level_for_eval(auth_user):$/;"	f	language:Python
+commentaire	/home/alassane/django/makeOurPlanetGreatAgain/projets/models.py	/^	commentaire = models.TextField('Commentaire ', max_length=4000)$/;"	v	language:Python	class:Evaluation
+context_object_name	/home/alassane/django/makeOurPlanetGreatAgain/projets/views.py	/^	context_object_name = 'last_project'$/;"	v	language:Python	class:IndexView
+context_object_name	/home/alassane/django/makeOurPlanetGreatAgain/projets/views.py	/^	context_object_name = 'projects'$/;"	v	language:Python	class:AllProjectView
+date_acquis_finance	/home/alassane/django/makeOurPlanetGreatAgain/projets/models.py	/^	date_acquis_finance = models.DateTimeField("Date aquisition financement", default=None, blank=True, null=True)$/;"	v	language:Python	class:Projet
+date_ajout_projet	/home/alassane/django/makeOurPlanetGreatAgain/projets/models.py	/^	date_ajout_projet = models.DateTimeField("Date d'ajout", auto_now_add=True, blank=True)$/;"	v	language:Python	class:Projet
+date_evaluation	/home/alassane/django/makeOurPlanetGreatAgain/projets/models.py	/^	date_evaluation = models.DateTimeField("Date d'évaluation", auto_now_add=True, blank=True)$/;"	v	language:Python	class:Evaluation
+date_finance	/home/alassane/django/makeOurPlanetGreatAgain/projets/models.py	/^	date_finance = models.DateTimeField("Date du don", auto_now_add=True, blank=True)$/;"	v	language:Python	class:Financement
+date_like	/home/alassane/django/makeOurPlanetGreatAgain/projets/models.py	/^    date_like = models.DateTimeField("Date d'évaluation", auto_now_add=True, blank=True)$/;"	v	language:Python	class:Like
+description_projet	/home/alassane/django/makeOurPlanetGreatAgain/projets/models.py	/^	description_projet = models.TextField('Description ', max_length=4000, blank=True)$/;"	v	language:Python	class:Projet
+evaluateur	/home/alassane/django/makeOurPlanetGreatAgain/projets/models.py	/^	evaluateur = models.ForeignKey(User, default=1, on_delete=models.CASCADE)$/;"	v	language:Python	class:Evaluation
+evaluation	/home/alassane/django/makeOurPlanetGreatAgain/projets/models.py	/^    evaluation = models.ForeignKey(Evaluation, default=1, on_delete=models.CASCADE)$/;"	v	language:Python	class:Like
+Evaluation	/home/alassane/django/makeOurPlanetGreatAgain/projets/models.py	/^class Evaluation(models.Model):$/;"	c	language:Python
+Financement	/home/alassane/django/makeOurPlanetGreatAgain/projets/models.py	/^class Financement(models.Model):$/;"	c	language:Python
+financement_est_aquis	/home/alassane/django/makeOurPlanetGreatAgain/projets/models.py	/^	financement_est_aquis = models.BooleanField("Financement déjà acquis", blank=False, default=False)$/;"	v	language:Python	class:Projet
+financeur	/home/alassane/django/makeOurPlanetGreatAgain/projets/models.py	/^	financeur = models.ForeignKey(User, default=1, on_delete=models.CASCADE)$/;"	v	language:Python	class:Financement
+finance_requis_projet	/home/alassane/django/makeOurPlanetGreatAgain/projets/models.py	/^	finance_requis_projet = models.DecimalField("Financement réquis", default=0.00, max_digits=10, decimal_places=2, blank=True)$/;"	v	language:Python	class:Projet
+get_queryset	/home/alassane/django/makeOurPlanetGreatAgain/projets/views.py	/^	def get_queryset(self):$/;"	m	language:Python	class:AllProjectView
+get_queryset	/home/alassane/django/makeOurPlanetGreatAgain/projets/views.py	/^	def get_queryset(self):$/;"	m	language:Python	class:IndexView
+IndexView	/home/alassane/django/makeOurPlanetGreatAgain/projets/views.py	/^class IndexView(generic.ListView):$/;"	c	language:Python
+Like	/home/alassane/django/makeOurPlanetGreatAgain/projets/models.py	/^class Like(models.Model):$/;"	c	language:Python
+like_authenticate_user	/home/alassane/django/makeOurPlanetGreatAgain/projets/models.py	/^    like_authenticate_user = models.ForeignKey(User, default=1, on_delete=models.CASCADE)$/;"	v	language:Python	class:Like
+montant_finance	/home/alassane/django/makeOurPlanetGreatAgain/projets/models.py	/^	montant_finance = models.DecimalField("Montant ", default=0.00, max_digits=10, decimal_places=2, blank=True)$/;"	v	language:Python	class:Financement
+note_evaluation	/home/alassane/django/makeOurPlanetGreatAgain/projets/models.py	/^	note_evaluation = models.PositiveIntegerField("Note du projet", default=0, validators=[MaxValueValidator(5)])$/;"	v	language:Python	class:Evaluation
+project_info	/home/alassane/django/makeOurPlanetGreatAgain/projets/views.py	/^def project_info(request, id_projet):$/;"	f	language:Python
+projet	/home/alassane/django/makeOurPlanetGreatAgain/projets/models.py	/^	projet = models.ForeignKey(Projet, default=1, on_delete=models.CASCADE)$/;"	v	language:Python	class:Evaluation
+projet	/home/alassane/django/makeOurPlanetGreatAgain/projets/models.py	/^	projet = models.ForeignKey(Projet, default=1, on_delete=models.CASCADE)$/;"	v	language:Python	class:Financement
+Projet	/home/alassane/django/makeOurPlanetGreatAgain/projets/models.py	/^class Projet(models.Model):$/;"	c	language:Python
+projet_is_financed	/home/alassane/django/makeOurPlanetGreatAgain/projets/views.py	/^def projet_is_financed(request, id_projet):$/;"	f	language:Python
+template_name	/home/alassane/django/makeOurPlanetGreatAgain/projets/views.py	/^	template_name = 'all_project.html'$/;"	v	language:Python	class:AllProjectView
+template_name	/home/alassane/django/makeOurPlanetGreatAgain/projets/views.py	/^	template_name = 'index_projet.html'$/;"	v	language:Python	class:IndexView
+titre_projet	/home/alassane/django/makeOurPlanetGreatAgain/projets/models.py	/^	titre_projet = models.CharField('Titre du projet ', max_length=40)$/;"	v	language:Python	class:Projet
+__str__	/home/alassane/django/makeOurPlanetGreatAgain/projets/models.py	/^	def __str__(self):$/;"	m	language:Python	class:Projet	file:

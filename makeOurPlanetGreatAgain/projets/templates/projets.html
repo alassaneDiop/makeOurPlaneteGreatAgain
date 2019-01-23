@@ -1,0 +1,30 @@
+{% extends "base.html"%}
+{% block content_title %}
+  LISTES DES PROJETS 
+{% endblock  %}
+{% block content %}
+
+	<div >
+        {% if projets %}
+        <div class="row">
+            {% for projet in projets %}
+	            <div class="col-sm-4 " >
+	                <div class="panel panel-info">
+	                    <div class="panel-heading">
+	                        <h4><a href="#" >{{ projet.titre_projet }}</a></h4>
+	                    </div>
+	                    <a href="" title="Découvrir le projet" >
+	                        <img src="" class="img-responsive" height="240" width="320" alt="Image"><br/>
+	                    </a>
+	                    <div class="panel-body">
+	                        <p><strong>Description:</strong> {{projet.description_projet}} </p>
+	                    </div>
+	                </div>
+	            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div><br>
+
+{% endblock  %}
+

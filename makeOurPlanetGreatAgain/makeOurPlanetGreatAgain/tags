@@ -1,0 +1,59 @@
+!_TAG_FILE_SORTED	2	/0=unsorted, 1=sorted, 2=foldcase/
+ACCOUNT_ACTIVATION_DAYS	/home/alassane/django/makeOurPlanetGreatAgain/makeOurPlanetGreatAgain/settings.py	/^ACCOUNT_ACTIVATION_DAYS = 1 # One-week activation window; you may, of course, use a different value.$/;"	v	language:Python
+ACCOUNT_ACTIVATION_DAYS	/home/alassane/makeOurPlaneteGreatAgain/makeOurPlanetGreatAgain/makeOurPlanetGreatAgain/settings.py	/^ACCOUNT_ACTIVATION_DAYS = 1 # One-week activation window; you may, of course, use a different value.$/;"	v	language:Python
+ALLOWED_HOSTS	/home/alassane/django/makeOurPlanetGreatAgain/makeOurPlanetGreatAgain/settings.py	/^ALLOWED_HOSTS = ['*']$/;"	v	language:Python
+ALLOWED_HOSTS	/home/alassane/makeOurPlaneteGreatAgain/makeOurPlanetGreatAgain/makeOurPlanetGreatAgain/settings.py	/^ALLOWED_HOSTS = ['*']$/;"	v	language:Python
+AUTH_PASSWORD_VALIDATORS	/home/alassane/django/makeOurPlanetGreatAgain/makeOurPlanetGreatAgain/settings.py	/^AUTH_PASSWORD_VALIDATORS = [$/;"	v	language:Python
+AUTH_PASSWORD_VALIDATORS	/home/alassane/makeOurPlaneteGreatAgain/makeOurPlanetGreatAgain/makeOurPlanetGreatAgain/settings.py	/^AUTH_PASSWORD_VALIDATORS = [$/;"	v	language:Python
+BASE_DIR	/home/alassane/django/makeOurPlanetGreatAgain/makeOurPlanetGreatAgain/settings.py	/^BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))$/;"	v	language:Python
+BASE_DIR	/home/alassane/makeOurPlaneteGreatAgain/makeOurPlanetGreatAgain/makeOurPlanetGreatAgain/settings.py	/^BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))$/;"	v	language:Python
+DATABASES	/home/alassane/django/makeOurPlanetGreatAgain/makeOurPlanetGreatAgain/settings.py	/^DATABASES = {$/;"	v	language:Python
+DATABASES	/home/alassane/makeOurPlaneteGreatAgain/makeOurPlanetGreatAgain/makeOurPlanetGreatAgain/settings.py	/^DATABASES = {$/;"	v	language:Python
+DEBUG	/home/alassane/django/makeOurPlanetGreatAgain/makeOurPlanetGreatAgain/settings.py	/^DEBUG = True$/;"	v	language:Python
+DEBUG	/home/alassane/makeOurPlaneteGreatAgain/makeOurPlanetGreatAgain/makeOurPlanetGreatAgain/settings.py	/^DEBUG = True$/;"	v	language:Python
+description	/home/alassane/django/makeOurPlanetGreatAgain/makeOurPlanetGreatAgain/feeds.py	/^	description = "Brèves description des projets récemments publié et en attentes de financement"$/;"	v	language:Python	class:ProjectsFeed
+EMAIL_BACKEND	/home/alassane/django/makeOurPlanetGreatAgain/makeOurPlanetGreatAgain/settings.py	/^EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'$/;"	v	language:Python
+EMAIL_BACKEND	/home/alassane/makeOurPlaneteGreatAgain/makeOurPlanetGreatAgain/makeOurPlanetGreatAgain/settings.py	/^EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'$/;"	v	language:Python
+INSTALLED_APPS	/home/alassane/django/makeOurPlanetGreatAgain/makeOurPlanetGreatAgain/settings.py	/^INSTALLED_APPS = [$/;"	v	language:Python
+INSTALLED_APPS	/home/alassane/makeOurPlaneteGreatAgain/makeOurPlanetGreatAgain/makeOurPlanetGreatAgain/settings.py	/^INSTALLED_APPS = [$/;"	v	language:Python
+items	/home/alassane/django/makeOurPlanetGreatAgain/makeOurPlanetGreatAgain/feeds.py	/^	def items(self):$/;"	m	language:Python	class:ProjectsFeed
+item_description	/home/alassane/django/makeOurPlanetGreatAgain/makeOurPlanetGreatAgain/feeds.py	/^	def item_description(self, item):$/;"	m	language:Python	class:ProjectsFeed
+item_link	/home/alassane/django/makeOurPlanetGreatAgain/makeOurPlanetGreatAgain/feeds.py	/^	def item_link(self, item):$/;"	m	language:Python	class:ProjectsFeed
+item_title	/home/alassane/django/makeOurPlanetGreatAgain/makeOurPlanetGreatAgain/feeds.py	/^	def item_title(self, item):$/;"	m	language:Python	class:ProjectsFeed
+LANGUAGE_CODE	/home/alassane/django/makeOurPlanetGreatAgain/makeOurPlanetGreatAgain/settings.py	/^LANGUAGE_CODE = 'fr-FR'$/;"	v	language:Python
+LANGUAGE_CODE	/home/alassane/makeOurPlaneteGreatAgain/makeOurPlanetGreatAgain/makeOurPlanetGreatAgain/settings.py	/^LANGUAGE_CODE = 'fr-FR'$/;"	v	language:Python
+link	/home/alassane/django/makeOurPlanetGreatAgain/makeOurPlanetGreatAgain/feeds.py	/^	link = "\/feeds\/"$/;"	v	language:Python	class:ProjectsFeed
+MEDIA_ROOT	/home/alassane/django/makeOurPlanetGreatAgain/makeOurPlanetGreatAgain/settings.py	/^MEDIA_ROOT = os.path.join(BASE_DIR,'media')$/;"	v	language:Python
+MEDIA_ROOT	/home/alassane/makeOurPlaneteGreatAgain/makeOurPlanetGreatAgain/makeOurPlanetGreatAgain/settings.py	/^MEDIA_ROOT = os.path.join(BASE_DIR,'media')$/;"	v	language:Python
+MEDIA_URL	/home/alassane/django/makeOurPlanetGreatAgain/makeOurPlanetGreatAgain/settings.py	/^MEDIA_URL = '\/media\/'$/;"	v	language:Python
+MEDIA_URL	/home/alassane/makeOurPlaneteGreatAgain/makeOurPlanetGreatAgain/makeOurPlanetGreatAgain/settings.py	/^MEDIA_URL = '\/media\/'$/;"	v	language:Python
+MIDDLEWARE	/home/alassane/django/makeOurPlanetGreatAgain/makeOurPlanetGreatAgain/settings.py	/^MIDDLEWARE = [$/;"	v	language:Python
+MIDDLEWARE	/home/alassane/makeOurPlaneteGreatAgain/makeOurPlanetGreatAgain/makeOurPlanetGreatAgain/settings.py	/^MIDDLEWARE = [$/;"	v	language:Python
+ProjectsFeed	/home/alassane/django/makeOurPlanetGreatAgain/makeOurPlanetGreatAgain/feeds.py	/^class ProjectsFeed(Feed):$/;"	c	language:Python
+REGISTRATION_AUTO_LOGIN	/home/alassane/django/makeOurPlanetGreatAgain/makeOurPlanetGreatAgain/settings.py	/^REGISTRATION_AUTO_LOGIN = True  # If True, the user will be automatically logged in.$/;"	v	language:Python
+REGISTRATION_AUTO_LOGIN	/home/alassane/django/makeOurPlanetGreatAgain/makeOurPlanetGreatAgain/settings.py	/^REGISTRATION_AUTO_LOGIN = True # Automatically log the user in.$/;"	v	language:Python
+REGISTRATION_AUTO_LOGIN	/home/alassane/makeOurPlaneteGreatAgain/makeOurPlanetGreatAgain/makeOurPlanetGreatAgain/settings.py	/^REGISTRATION_AUTO_LOGIN = True  # If True, the user will be automatically logged in.$/;"	v	language:Python
+REGISTRATION_AUTO_LOGIN	/home/alassane/makeOurPlaneteGreatAgain/makeOurPlanetGreatAgain/makeOurPlanetGreatAgain/settings.py	/^REGISTRATION_AUTO_LOGIN = True # Automatically log the user in.$/;"	v	language:Python
+ROOT_URLCONF	/home/alassane/django/makeOurPlanetGreatAgain/makeOurPlanetGreatAgain/settings.py	/^ROOT_URLCONF = 'makeOurPlanetGreatAgain.urls'$/;"	v	language:Python
+ROOT_URLCONF	/home/alassane/makeOurPlaneteGreatAgain/makeOurPlanetGreatAgain/makeOurPlanetGreatAgain/settings.py	/^ROOT_URLCONF = 'makeOurPlanetGreatAgain.urls'$/;"	v	language:Python
+SECRET_KEY	/home/alassane/django/makeOurPlanetGreatAgain/makeOurPlanetGreatAgain/settings.py	/^SECRET_KEY = '9d8zpo_663f!vr#x!czqz7_wf5an6d5t=*2&ly9+-(hu1y8ezc'$/;"	v	language:Python
+SECRET_KEY	/home/alassane/makeOurPlaneteGreatAgain/makeOurPlanetGreatAgain/makeOurPlanetGreatAgain/settings.py	/^SECRET_KEY = '9d8zpo_663f!vr#x!czqz7_wf5an6d5t=*2&ly9+-(hu1y8ezc'$/;"	v	language:Python
+SITE_ID	/home/alassane/django/makeOurPlanetGreatAgain/makeOurPlanetGreatAgain/settings.py	/^SITE_ID=1$/;"	v	language:Python
+SITE_ID	/home/alassane/makeOurPlaneteGreatAgain/makeOurPlanetGreatAgain/makeOurPlanetGreatAgain/settings.py	/^SITE_ID=1$/;"	v	language:Python
+STATIC_URL	/home/alassane/django/makeOurPlanetGreatAgain/makeOurPlanetGreatAgain/settings.py	/^STATIC_URL = '\/static\/'$/;"	v	language:Python
+STATIC_URL	/home/alassane/django/makeOurPlanetGreatAgain/makeOurPlanetGreatAgain/settings.py	/^STATIC_URL = '\/static\/'$/;"	v	language:Python
+STATIC_URL	/home/alassane/makeOurPlaneteGreatAgain/makeOurPlanetGreatAgain/makeOurPlanetGreatAgain/settings.py	/^STATIC_URL = '\/static\/'$/;"	v	language:Python
+STATIC_URL	/home/alassane/makeOurPlaneteGreatAgain/makeOurPlanetGreatAgain/makeOurPlanetGreatAgain/settings.py	/^STATIC_URL = '\/static\/'$/;"	v	language:Python
+TEMPLATES	/home/alassane/django/makeOurPlanetGreatAgain/makeOurPlanetGreatAgain/settings.py	/^TEMPLATES = [$/;"	v	language:Python
+TEMPLATES	/home/alassane/makeOurPlaneteGreatAgain/makeOurPlanetGreatAgain/makeOurPlanetGreatAgain/settings.py	/^TEMPLATES = [$/;"	v	language:Python
+TIME_ZONE	/home/alassane/django/makeOurPlanetGreatAgain/makeOurPlanetGreatAgain/settings.py	/^TIME_ZONE = 'Europe\/Paris'$/;"	v	language:Python
+TIME_ZONE	/home/alassane/makeOurPlaneteGreatAgain/makeOurPlanetGreatAgain/makeOurPlanetGreatAgain/settings.py	/^TIME_ZONE = 'Europe\/Paris'$/;"	v	language:Python
+title	/home/alassane/django/makeOurPlanetGreatAgain/makeOurPlanetGreatAgain/feeds.py	/^	title = "Les projets recents"$/;"	v	language:Python	class:ProjectsFeed
+USE_I18N	/home/alassane/django/makeOurPlanetGreatAgain/makeOurPlanetGreatAgain/settings.py	/^USE_I18N = True$/;"	v	language:Python
+USE_I18N	/home/alassane/makeOurPlaneteGreatAgain/makeOurPlanetGreatAgain/makeOurPlanetGreatAgain/settings.py	/^USE_I18N = True$/;"	v	language:Python
+USE_L10N	/home/alassane/django/makeOurPlanetGreatAgain/makeOurPlanetGreatAgain/settings.py	/^USE_L10N = True$/;"	v	language:Python
+USE_L10N	/home/alassane/makeOurPlaneteGreatAgain/makeOurPlanetGreatAgain/makeOurPlanetGreatAgain/settings.py	/^USE_L10N = True$/;"	v	language:Python
+USE_TZ	/home/alassane/django/makeOurPlanetGreatAgain/makeOurPlanetGreatAgain/settings.py	/^USE_TZ = True$/;"	v	language:Python
+USE_TZ	/home/alassane/makeOurPlaneteGreatAgain/makeOurPlanetGreatAgain/makeOurPlanetGreatAgain/settings.py	/^USE_TZ = True$/;"	v	language:Python
+WSGI_APPLICATION	/home/alassane/django/makeOurPlanetGreatAgain/makeOurPlanetGreatAgain/settings.py	/^WSGI_APPLICATION = 'makeOurPlanetGreatAgain.wsgi.application'$/;"	v	language:Python
+WSGI_APPLICATION	/home/alassane/makeOurPlaneteGreatAgain/makeOurPlanetGreatAgain/makeOurPlanetGreatAgain/settings.py	/^WSGI_APPLICATION = 'makeOurPlanetGreatAgain.wsgi.application'$/;"	v	language:Python
