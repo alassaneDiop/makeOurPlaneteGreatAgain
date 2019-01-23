@@ -1,5 +1,5 @@
 
-FROM python:2.7
+FROM python:3.6
 
 
 RUN apt-get update && apt-get upgrade -y && apt-get autoremove && apt-get autoclean
