@@ -1,0 +1,38 @@
+version: '2'
+services:
+  db:
+    image: mysql:5.7
+    restart: always
+    ports:
+        - "3307:3306"
+    environment:
+        - MYSQL_ROOT_PASSWORD=passer
+        - MYSQL_USER=root
+        - MYSQL_PASSWORD=passer
+        - MYSQL_DATABASE=makeOurPlanetGreatAgain
+    container_name: mysql-container
+    volumes:
+        - ./mysql-dump:/docker-entrypoint-initdb.d
+  web:
+    build: .
+    command: bash -c "python makeOurPlanetGreatAgain/manage.py migrate && python makeOurPlanetGreatAgain/manage.py runserver 0.0.0.0:8004"
+    volumes:
+      - .:/code
+    ports:
+        - "8000:8004"
+    links:
+        - "db:database"
+    depends_on:
+        - db
+    container_name: web-container
+    restart: on-failure
+
+  # phpmyadmin:
+  #   image: phpmyadmin/phpmyadmin
+  #   environment:
+  #     - PMA_ARBITRARY=1
+  #   restart: always
+  #   ports:
+  #     - 8082:80
+  #   volumes:
+  #     - /sessions
